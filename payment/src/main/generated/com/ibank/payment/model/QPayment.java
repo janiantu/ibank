@@ -23,6 +23,8 @@ public class QPayment extends EntityPathBase<Payment> {
 
     public final StringPath bicCode = createString("bicCode");
 
+    public final NumberPath<Double> cancellationFee = createNumber("cancellationFee", Double.class);
+
     public final StringPath creditorIban = createString("creditorIban");
 
     public final StringPath currency = createString("currency");

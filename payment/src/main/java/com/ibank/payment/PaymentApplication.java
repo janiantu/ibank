@@ -20,7 +20,5 @@ public class PaymentApplication {
 	public ModelMapper modelMapper() {
 	    return new ModelMapper();
 	}
-	
-
 
 }

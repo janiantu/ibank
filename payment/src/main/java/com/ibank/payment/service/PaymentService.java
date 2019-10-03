@@ -103,9 +103,9 @@ public class PaymentService implements com.ibank.payment.service.interfaces.Paym
 		BigDecimal cancellationFee = new BigDecimal(0.00).setScale(2);
 		
 		switch (PaymentType.valueOf(payment.getType())) {
-			case TYPE1 : cancellationFee = new BigDecimal(hours*0.05).setScale(2); break;
-			case TYPE2 : cancellationFee = new BigDecimal(hours*0.10).setScale(2); break;
-			case TYPE3 : cancellationFee = new BigDecimal(hours*0.15).setScale(2); break;
+			case TYPE1 : cancellationFee = new BigDecimal(hours*0.05).setScale(2, BigDecimal.ROUND_HALF_UP); break;
+			case TYPE2 : cancellationFee = new BigDecimal(hours*0.10).setScale(2, BigDecimal.ROUND_HALF_UP); break;
+			case TYPE3 : cancellationFee = new BigDecimal(hours*0.15).setScale(2, BigDecimal.ROUND_HALF_UP); break;
 		}
 		
 		return cancellationFee;
