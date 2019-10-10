@@ -86,7 +86,7 @@ public class PaymentService implements com.ibank.payment.service.interfaces.Paym
 		if (currentDate.isBefore(transactionDate) && payment.getStatus().equals(PaymentStatus.IN_PROGRESS.getValue()) ) {
 			payment.setStatus(PaymentStatus.CANCELLED.getValue());
 			BigDecimal cancellationFee = calculateCancellationFee(payment);
-			payment.setCancellationFee(cancellationFee.doubleValue());
+			payment.setCancellationFee(cancellationFee);
 			paymentRepository.save(payment);
 		} else {
 			throw new PaymentException("Payment cancellation is not possible.");

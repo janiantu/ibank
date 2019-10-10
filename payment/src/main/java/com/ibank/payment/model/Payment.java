@@ -1,7 +1,7 @@
 package com.ibank.payment.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -46,13 +46,13 @@ public class Payment {
 	    private LocalDateTime transactionDate;
 		
 		@Column(nullable = true)
-	    private Double cancellationFee;
+	    private BigDecimal cancellationFee;
 		
-		public Double getCancellationFee() {
+		public BigDecimal getCancellationFee() {
 			return cancellationFee;
 		}
 
-		public void setCancellationFee(Double cancellationFee) {
+		public void setCancellationFee(BigDecimal cancellationFee) {
 			this.cancellationFee = cancellationFee;
 		}
 
